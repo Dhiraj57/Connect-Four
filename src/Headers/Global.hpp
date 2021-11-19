@@ -1,11 +1,17 @@
 #pragma once
 
-constexpr int CELL_SIZE = 16;
+constexpr float CELL_SIZE = 70.3;
+
 constexpr int MAP_HEIGHT = 630;
 constexpr int MAP_WIDTH = 800;
-constexpr float SCREEN_RESIZE = 1;
 
-constexpr int FONT_HEIGHT = 16;
+constexpr int row = 6;
+constexpr int column = 7;
+
+constexpr int gridStartX = 166;
+constexpr int gridStartY = 141;
+
+constexpr float SCREEN_RESIZE = 1;
 constexpr int FRAME_DURATION = 16667;
 
 
