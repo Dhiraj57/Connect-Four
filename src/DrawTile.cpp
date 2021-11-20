@@ -21,6 +21,7 @@ int tileLocation(const std::array<std::array<Tile, row>, column>& grid, int col)
 {
     int i = 5;
 
+    // Checking all rows for selected column, to find empty grid position.
     while(i >= 0)
     {
         if(grid[col][i] == NONE)
@@ -31,5 +32,6 @@ int tileLocation(const std::array<std::array<Tile, row>, column>& grid, int col)
         i--; 
     }
     
+    // Selected column is full.
     return -1;
 }

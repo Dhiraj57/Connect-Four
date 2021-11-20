@@ -12,11 +12,15 @@ bool victoryCheck(const std::array<std::array<Tile, row>, column>& grid, int new
     int maxUp = newTile % 6;
     int maxDown = 5 - maxUp;
 
+    // Number of same tiles.
     int counter = 1;
+
+    // Type of tile to be checked.
     Tile color = static_cast<Tile>(grid[col][newTile]);
 
-    // Horizontal :
 
+    // Horizontal :
+    // We loop through all tiles at left side.
     for(int i = 1; i <= maxLeft; i++)
     {
         if(grid[col-i][newTile] == color)
@@ -28,7 +32,7 @@ bool victoryCheck(const std::array<std::array<Tile, row>, column>& grid, int new
             break;
         }
     }
-
+    // We loop through all tiles at right side.
     for(int i = 1; i <= maxRight; i++)
     {
         if(grid[col+i][newTile] == color)
@@ -45,9 +49,9 @@ bool victoryCheck(const std::array<std::array<Tile, row>, column>& grid, int new
 
 
     // Vertical :
-
     counter = 1;
 
+    // We loop through all tiles above.
     for(int i = 1; i <= maxUp; i++)
     {
         if(grid[col][newTile-i] == color)
@@ -60,6 +64,7 @@ bool victoryCheck(const std::array<std::array<Tile, row>, column>& grid, int new
         }
     }
 
+    // We loop through all tiles below.
     for(int i = 1; i <= maxDown; i++)
     {
         if(grid[col][newTile+i] == color)
@@ -76,7 +81,6 @@ bool victoryCheck(const std::array<std::array<Tile, row>, column>& grid, int new
 
 
     // Diagonal : Top-left
-    
     counter = 1;
 
     for(int i = 1; i <= maxLeft && i<= maxUp; i++)
@@ -107,7 +111,6 @@ bool victoryCheck(const std::array<std::array<Tile, row>, column>& grid, int new
 
 
     // Diagonal : Bottom-left
-    
     counter = 1;
 
     for(int i = 1; i <= maxLeft && i<= maxDown; i++)
@@ -122,7 +125,7 @@ bool victoryCheck(const std::array<std::array<Tile, row>, column>& grid, int new
         }
     }
 
-    for(int i = 1; i <= maxRight && i <= maxLeft; i++)
+    for(int i = 1; i <= maxRight && i <= maxUp; i++)
     {
         if(grid[col+i][newTile-i] == color)
         {

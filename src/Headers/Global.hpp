@@ -8,14 +8,15 @@ constexpr int MAP_WIDTH = 800;
 constexpr int row = 6;
 constexpr int column = 7;
 
+// Grid start position.
 constexpr int gridStartX = 166;
 constexpr int gridStartY = 141;
 
+// To change screen size.
 constexpr float SCREEN_RESIZE = 1;
-constexpr int FRAME_DURATION = 16667;
 
 
-// Tile types.
+// Tile type.
 enum Tile
 {
 	NONE,
